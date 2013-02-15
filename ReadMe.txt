@@ -1,5 +1,5 @@
-
 This game is called "Samurai TD" which is a TD game combining elements from RTS.
+It is targeted for the iOS platform.
 
 It's developed based on Cocos2d-x game engine.
 
@@ -31,3 +31,7 @@ This game is called "Samurai TD" which is a TD game combining elements from RTS.
 Basically, the player build towers in the pre-determined slots along the paths through which the enemies will walk. The towers will attack the enemies automatically. What makes it also a RTS game is one of the towers the player can build is the "Tavern" which spawns soldiers to block and attack the enemies. Player can move the soldiers spawned within a certain range around the "Tavern", and this brings a lot of strategic thinking during the game play. Also, a hero (our main role) can also be controlld to fight the enemies.
 
 Hope you would like it !
+
+
+Regards,
+Wu Yifeng
