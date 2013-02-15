@@ -1,25 +1,27 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 
+#include "CollisionManager.h"
+#include "MessageDispatcher.h"
+
+
+#include "Figher.h"
+
 using namespace cocos2d;
 using namespace CocosDenshion;
 
 CCScene* HelloWorld::scene()
 {
-    // 'scene' is an autorelease object
     CCScene *scene = CCScene::create();
     
-    // 'layer' is an autorelease object
     HelloWorld *layer = HelloWorld::create();
 
-    // add layer as a child to scene
     scene->addChild(layer);
 
-    // return the scene
     return scene;
 }
 
-// on "init" you need to initialize your instance
+
 bool HelloWorld::init()
 {
     //////////////////////////////
@@ -29,47 +31,16 @@ bool HelloWorld::init()
         return false;
     }
 
-    /////////////////////////////
-    // 2. add a menu item with "X" image, which is clicked to quit the program
-    //    you may modify it.
-
-    // add a "close" icon to exit the progress. it's an autorelease object
-    CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
-                                        "CloseNormal.png",
-                                        "CloseSelected.png",
-                                        this,
-                                        menu_selector(HelloWorld::menuCloseCallback) );
-    pCloseItem->setPosition( ccp(CCDirector::sharedDirector()->getWinSize().width - 20, 20) );
-
-    // create menu, it's an autorelease object
-    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
-    pMenu->setPosition( CCPointZero );
-    this->addChild(pMenu, 1);
-
-    /////////////////////////////
-    // 3. add your codes below...
-
-    // add a label shows "Hello World"
-    // create and initialize a label
-    CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Thonburi", 34);
-
-    // ask director the window size
-    CCSize size = CCDirector::sharedDirector()->getWinSize();
-
-    // position the label on the center of the screen
-    pLabel->setPosition( ccp(size.width / 2, size.height - 20) );
-
-    // add the label as a child to this layer
-    this->addChild(pLabel, 1);
-
-    // add "HelloWorld" splash screen"
-    CCSprite* pSprite = CCSprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
-    pSprite->setPosition( ccp(size.width/2, size.height/2) );
-
-    // add the sprite as a child to this layer
-    this->addChild(pSprite, 0);
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("test2.plist");
+    m_pBatch = CCSpriteBatchNode::create("test2.png");
+    this->addChild(m_pBatch);
+    
+    setTarget(Fighter::create(kPeasant, kNPC));
+    m_pTarget->setPosition(100, 200);
+        
+    scheduleUpdate();
+    
+    setTouchEnabled(true);
     
     return true;
 }
@@ -81,4 +52,45 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
+}
+
+
+//
+// Testing
+//
+
+void HelloWorld::setTarget(BaseGameEntity *target) {
+    CC_SAFE_RELEASE(m_pTarget);
+    
+    m_pTarget = target;
+    
+    m_pBatch->addChild(target->getSprite());
+}
+
+
+void HelloWorld::update(float dt) {
+    CollisionManager::instance()->update(dt);
+}
+
+
+void HelloWorld::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent) {
+    
+    // touch
+    CCTouch *touch = (CCTouch *)pTouches->anyObject();
+    CCPoint location = touch->getLocationInView();
+    location = CCDirector::sharedDirector()->convertToGL(location);
+    CCLog("---location (%f, %f)", location.x, location.y);
+    
+    /*
+    // Test Messaging
+    MessageDispatcher::instance()->dispatchMessage(0, 0, 0, kTesting, (void *)"Hello World");
+     */
+    
+    /*
+    // Test Collision
+    Fighter *newFighter = Fighter::create(kPeasant);
+    m_pBatch->addChild(newFighter->getSprite());
+    
+    newFighter->setPosition(location);
+     */
 }

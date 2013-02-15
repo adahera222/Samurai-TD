@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="1" height="1" tilewidth="1024" tileheight="768">
+ <tileset firstgid="1" name="test_map_0" tilewidth="1024" tileheight="768">
+  <image source="test_map_0.png" width="1024" height="768"/>
+ </tileset>
+ <layer name="块层 1" width="1" height="1">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgAAAACAAC
+  </data>
+ </layer>
+ <objectgroup name="WayPoint" width="1" height="1">
+  <object name="way_point_1" x="894" y="256"/>
+  <object name="way_point_2" x="842" y="250"/>
+  <object name="way_point_3" x="802" y="234"/>
+  <object name="way_point_4" x="770" y="180"/>
+  <object name="way_point_5" x="734" y="158"/>
+  <object name="way_point_6" x="696" y="152"/>
+  <object name="way_point_7" x="644" y="160"/>
+  <object name="way_point_8" x="614" y="192"/>
+  <object name="way_point_9" x="590" y="234"/>
+  <object name="way_point_10" x="554" y="256"/>
+  <object name="way_point_11" x="498" y="258"/>
+  <object name="way_point_12" x="414" y="248"/>
+  <object name="way_point_13" x="368" y="264"/>
+  <object name="way_point_14" x="322" y="322"/>
+  <object name="way_point_15" x="268" y="428"/>
+  <object name="way_point_16" x="254" y="472"/>
+  <object name="way_point_17" x="276" y="508"/>
+  <object name="way_point_18" x="300" y="562"/>
+  <object name="way_point_19" x="270" y="608"/>
+  <object name="way_point_20" x="218" y="630"/>
+  <object name="way_point_21" x="-26" y="612"/>
+  <object name="way_point_0" x="1052" y="260"/>
+ </objectgroup>
+ <objectgroup name="SpawnPoint" width="1" height="1">
+  <object name="spawn_point_0" x="1060" y="262"/>
+ </objectgroup>
+ <objectgroup name="TowerSlot" width="1" height="1">
+  <object name="tower_slot_0" x="904" y="176"/>
+  <object name="tower_slot_1" x="700" y="256"/>
+  <object name="tower_slot_2" x="512" y="168"/>
+  <object name="tower_slot_3" x="362" y="170"/>
+  <object name="tower_slot_4" x="452" y="350"/>
+  <object name="tower_slot_6" x="164" y="532"/>
+  <object name="tower_slot_5" x="376" y="452"/>
+ </objectgroup>
+</map>

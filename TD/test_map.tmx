@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="1" height="1" tilewidth="480" tileheight="320">
+ <tileset firstgid="1" name="test_map" tilewidth="480" tileheight="320">
+  <image source="test_map.png" width="480" height="320"/>
+ </tileset>
+ <layer name="块层 1" width="1" height="1">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgAAAACAAC
+  </data>
+ </layer>
+ <objectgroup name="WayPoint" width="1" height="1" visible="0">
+  <object name="way_point_0" x="493" y="86">
+   <properties>
+    <property name="sequence" value="0"/>
+   </properties>
+  </object>
+  <object name="way_point_1" x="376" y="92">
+   <properties>
+    <property name="sequence" value="1"/>
+   </properties>
+  </object>
+  <object name="way_point_2" x="305" y="115">
+   <properties>
+    <property name="sequence" value="2"/>
+   </properties>
+  </object>
+  <object name="way_point_3" x="275" y="188">
+   <properties>
+    <property name="sequence" value="3"/>
+   </properties>
+  </object>
+  <object name="way_point_4" x="247" y="231">
+   <properties>
+    <property name="sequence" value="4"/>
+   </properties>
+  </object>
+  <object name="way_point_5" x="197" y="232">
+   <properties>
+    <property name="sequence" value="5"/>
+   </properties>
+  </object>
+  <object name="way_point_6" x="168" y="194">
+   <properties>
+    <property name="sequence" value="6"/>
+   </properties>
+  </object>
+  <object name="way_point_7" x="138" y="157">
+   <properties>
+    <property name="sequence" value="7"/>
+   </properties>
+  </object>
+  <object name="way_point_8" x="49" y="152">
+   <properties>
+    <property name="sequence" value="8"/>
+   </properties>
+  </object>
+  <object name="way_point_9" x="-19" y="154">
+   <properties>
+    <property name="sequence" value="9"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="TowerSlot" width="1" height="1" visible="0">
+  <object name="tower_slot_0" x="394" y="64"/>
+  <object name="tower_slot_1" x="363" y="152"/>
+  <object name="tower_slot_2" x="245" y="192"/>
+  <object name="tower_slot_3" x="203" y="190"/>
+  <object name="tower_slot_4" x="106" y="211"/>
+  <object name="tower_slot_5" x="68" y="128"/>
+ </objectgroup>
+ <objectgroup name="SpawnPoint" width="1" height="1">
+  <object name="spawn_point_0" x="502" y="93"/>
+ </objectgroup>
+</map>
